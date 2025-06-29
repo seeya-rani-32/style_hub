@@ -16,6 +16,7 @@
                 <a href="{{ route('about-us')}}" class="text-gray-600 hover:text-pink-500 transition">About</a>
                 <a href="{{ route('products.categories')}}" class="text-gray-600 hover:text-pink-500 transition">Products</a>
                 <a href="{{ route('contact.show') }}" class="text-gray-600 hover:text-pink-500 transition">Contact</a>
+                <a href="{{ route('cart.index') }}" class="text-gray-600 hover:text-pink-500 transition">Cart</a>
             </nav>
         </div>
     </header>

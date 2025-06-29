@@ -4,14 +4,16 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductBrowseController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StripeController;
 
-Route::get('/',[HomeController::class,'showHomePage'])->name('home');
-Route::get('/about-us',[HomeController::class,'showAboutPage'])->name('about-us');
+Route::get('/', [HomeController::class, 'showHomePage'])->name('home');
+Route::get('/about-us', [HomeController::class, 'showAboutPage'])->name('about-us');
 
 Route::get('/contact-us', [ContactController::class, 'show'])->name('contact.show');
 Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');
@@ -24,6 +26,14 @@ Route::get('/products/category/{category}', [ProductBrowseController::class, 'pr
 
 Route::get('/products/{product}', [ProductBrowseController::class, 'show'])->name('products.show');
 
+Route::get('cart', [CartController::class, 'cart'])->name('cart.index');
+Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('cart.add');
+Route::patch('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
+Route::delete('remove-from-cart', [CartController::class, 'removeCart'])->name('cart.remove');
+
+
+Route::get('/checkout', [StripeController::class, 'checkout'])->name('stripe.checkout');
+Route::get('/checkout/success', [StripeController::class, 'success'])->name('stripe.success');
 
 
 

@@ -18,9 +18,7 @@
             </span>
         </div>
 
-        <button class="bg-pink-500 text-white px-6 py-3 rounded-full hover:bg-pink-600 transition shadow-lg">
-            Add to Cart
-        </button>
+        <a href="{{ route('cart.add', $product->id) }}" class="bg-pink-500 text-white px-6 py-3 rounded-full hover:bg-pink-600 transition shadow-lg">Add to Cart</a>
     </div>
 </div>
 @endsection
