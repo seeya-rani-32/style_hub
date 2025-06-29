@@ -5,11 +5,27 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductBrowseController;
 use App\Http\Controllers\ProductController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[HomeController::class,'showHomePage'])->name('home');
+Route::get('/about-us',[HomeController::class,'showAboutPage'])->name('about-us');
+
+Route::get('/contact-us', [ContactController::class, 'show'])->name('contact.show');
+Route::post('/contact-us', [ContactController::class, 'store'])->name('contact.store');
+
+// Show all categories
+Route::get('/products', [ProductBrowseController::class, 'categories'])->name('products.categories');
+
+// Show products in a category
+Route::get('/products/category/{category}', [ProductBrowseController::class, 'productsByCategory'])->name('products.byCategory');
+
+Route::get('/products/{product}', [ProductBrowseController::class, 'show'])->name('products.show');
+
+
+
 
 Route::prefix('admin')->group(function () {
     Route::get('/accounts/login', [AuthController::class, 'showLoginForm'])->name('admin.login');
