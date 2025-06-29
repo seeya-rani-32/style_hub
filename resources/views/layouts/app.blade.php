@@ -12,6 +12,7 @@
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <a href="/" class="text-3xl font-bold text-pink-600">StyleHub</a>
             <nav class="space-x-6 text-sm font-medium">
+                <a href="{{ route('home')}}" class="text-gray-600 hover:text-pink-500 transition">Home</a>
                 <a href="{{ route('about-us')}}" class="text-gray-600 hover:text-pink-500 transition">About</a>
                 <a href="{{ route('products.categories')}}" class="text-gray-600 hover:text-pink-500 transition">Products</a>
                 <a href="{{ route('contact.show') }}" class="text-gray-600 hover:text-pink-500 transition">Contact</a>

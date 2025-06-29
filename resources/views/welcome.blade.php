@@ -7,7 +7,7 @@
             Adorable Baby Clothes for Every Moment
         </h1>
         <p class="mt-4 text-lg text-gray-600">Soft, safe, and stylish fashion your baby deserves. Shop our handpicked collection now.</p>
-        <a href="#shop" class="mt-6 inline-block bg-pink-500 text-white text-lg px-6 py-3 rounded-full hover:bg-pink-600 transition shadow-lg hover:shadow-xl transform hover:scale-105">Shop Now</a>
+        <a href="{{ route('products.categories') }}" class="mt-6 inline-block bg-pink-500 text-white text-lg px-6 py-3 rounded-full hover:bg-pink-600 transition shadow-lg hover:shadow-xl transform hover:scale-105">Shop Now</a>
     </div>
 </section>
 
